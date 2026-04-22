@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRoot" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:gravity="center" android:padding="8dp" android:background="@drawable/bg_on">
+  <ImageView android:id="@+id/ivBell" android:layout_width="32dp" android:layout_height="32dp"
+      android:src="@drawable/ic_bell_on" android:contentDescription="Stato"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:text="Reolink" android:textSize="9sp" android:textColor="#CCFFFFFF" android:layout_marginTop="2dp"/>
+  <TextView android:id="@+id/tvState" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:text="ON" android:textSize="13sp" android:textStyle="bold" android:textColor="#FFFFFF"/>
+  <TextView android:id="@+id/tvCountdownWidget" android:layout_width="wrap_content"
+      android:layout_height="wrap_content" android:text="" android:textSize="9sp"
+      android:textColor="#FFEECC" android:visibility="gone"/>
+</LinearLayout>
