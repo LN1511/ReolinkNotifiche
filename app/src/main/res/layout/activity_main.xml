@@ -1,53 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/bg_dark">
-  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-      android:orientation="vertical" android:gravity="center_horizontal" android:padding="24dp">
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Reolink Notifiche" android:textSize="22sp" android:textStyle="bold"
-        android:textColor="#FFFFFF" android:layout_marginBottom="28dp"/>
-    <ImageButton android:id="@+id/btnToggle" android:layout_width="140dp" android:layout_height="140dp"
-        android:background="@drawable/bg_on" android:src="@drawable/ic_bell_on"
-        android:padding="30dp" android:contentDescription="Toggle" android:scaleType="fitCenter"/>
-    <TextView android:id="@+id/tvStatus" android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="ATTIVE" android:textSize="20sp" android:textStyle="bold"
-        android:textColor="@color/green" android:layout_marginTop="18dp"/>
-    <TextView android:id="@+id/tvHint" android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Tocca per aprire le impostazioni" android:textSize="13sp"
-        android:textColor="#666666" android:gravity="center" android:layout_marginTop="8dp" android:layout_marginBottom="20dp"/>
-    <LinearLayout android:id="@+id/countdownCard" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:background="@drawable/bg_card_orange"
-        android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical"
-        android:visibility="gone" android:layout_marginBottom="16dp">
-      <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-          android:layout_weight="1" android:orientation="vertical">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Riattivazione tra" android:textSize="12sp" android:textColor="@color/orange"/>
-        <TextView android:id="@+id/tvCountdown" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="00:00:00" android:textSize="28sp" android:textStyle="bold"
-            android:textColor="@color/orange" android:fontFamily="monospace"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:gravity="center_horizontal"
+      android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reolink Notifiche"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="28dp"/>
+
+    <ImageButton
+        android:id="@+id/btnToggle"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_on"
+        android:src="@drawable/ic_bell_on"
+        android:padding="30dp"
+        android:contentDescription="Toggle"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ATTIVE"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        android:layout_marginTop="18dp"/>
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tocca per aprire le impostazioni"
+        android:textSize="13sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- COUNTDOWN CARD -->
+    <LinearLayout
+        android:id="@+id/countdownCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_orange"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp">
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riattivazione tra"
+            android:textSize="12sp"
+            android:textColor="@color/orange"/>
+
+        <TextView
+            android:id="@+id/tvCountdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/orange"
+            android:fontFamily="monospace"/>
       </LinearLayout>
-      <Button android:id="@+id/btnCancelTimer" android:layout_width="wrap_content" android:layout_height="wrap_content"
-          android:text="Annulla" android:textColor="@color/orange" android:backgroundTint="#33E67E22"/>
+
+      <Button
+          android:id="@+id/btnCancelTimer"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Annulla"
+          android:textColor="@color/orange"
+          android:background="#33E67E22"/>
     </LinearLayout>
-    <View android:layout_width="match_parent" android:layout_height="1dp"
-        android:background="#1E1E3A" android:layout_marginBottom="16dp"/>
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="SILENZIA PER" android:textSize="11sp" android:textColor="#555555"
-        android:letterSpacing="0.1" android:layout_marginBottom="10dp"/>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:layout_marginBottom="8dp">
-      <Button android:id="@+id/chip30m" style="@style/TimerChip" android:layout_weight="1" android:text="30 min"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1E1E3A"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SILENZIA PER"
+        android:textSize="11sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- RIGA 1 TIMER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+      <Button
+          android:id="@+id/chip30m"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:text="30 min"
+          android:textColor="#CCCCCC"
+          android:background="@drawable/bg_chip"
+          android:textSize="13sp"/>
+
       <View android:layout_width="8dp" android:layout_height="wrap_content"/>
-      <Button android:id="@+id/chip1h"  style="@style/TimerChip" android:layout_weight="1" android:text="1 ora"/>
+
+      <Button
+          android:id="@+id/chip1h"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:text="1 ora"
+          android:textColor="#CCCCCC"
+          android:background="@drawable/bg_chip"
+          android:textSize="13sp"/>
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-      <Button android:id="@+id/chip4h"  style="@style/TimerChip" android:layout_weight="1" android:text="4 ore"/>
+
+    <!-- RIGA 2 TIMER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <Button
+          android:id="@+id/chip4h"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:text="4 ore"
+          android:textColor="#CCCCCC"
+          android:background="@drawable/bg_chip"
+          android:textSize="12sp"/>
+
       <View android:layout_width="6dp" android:layout_height="wrap_content"/>
-      <Button android:id="@+id/chip10h" style="@style/TimerChip" android:layout_weight="1" android:text="10 ore"/>
+
+      <Button
+          android:id="@+id/chip10h"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:text="10 ore"
+          android:textColor="#CCCCCC"
+          android:background="@drawable/bg_chip"
+          android:textSize="12sp"/>
+
       <View android:layout_width="6dp" android:layout_height="wrap_content"/>
-      <Button android:id="@+id/chip24h" style="@style/TimerChip" android:layout_weight="1" android:text="24 ore"/>
+
+      <Button
+          android:id="@+id/chip24h"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:text="24 ore"
+          android:textColor="#CCCCCC"
+          android:background="@drawable/bg_chip"
+          android:textSize="12sp"/>
     </LinearLayout>
+
   </LinearLayout>
 </ScrollView>
